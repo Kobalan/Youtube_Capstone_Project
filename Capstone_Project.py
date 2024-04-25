@@ -49,7 +49,7 @@ cursor=database.cursor()
 
 #API_Connection...
 
-api_key = 'AIzaSyBMJHpVbZCMo65P3qucFfKM9nhYx4_h67A'  #Google_API_Key
+api_key = ''  #Google_API_Key
 youtube = build("youtube", "v3", developerKey=api_key)
 #Storing function in variable for reusable    
 
