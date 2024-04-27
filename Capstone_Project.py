@@ -51,7 +51,7 @@ cursor=database.cursor()
 
 api_key = ''  #Google_API_Key  #get this details in Google API Reference
 youtube = build("youtube", "v3", developerKey=api_key)
-#Storing function in variable for reusable    
+#Store a value in the variable for reusable    
 
 
 #1]Getting Channel_Details using Channel_id......
@@ -335,7 +335,7 @@ def Comment_opt():
     return st.table(df) 
      
 #-------------------------------------------------------------------------------
-#5)SQL Transformation....
+#5)Transforming menu
 
 st.markdown("## :orange[  █▓▒TRANSFORMING▒▓]")
 st.markdown("### 𝙋𝙖𝙨𝙩𝙚 𝙖 𝘾𝙝𝙖𝙣𝙣𝙚𝙡_𝙄𝘿")
@@ -354,14 +354,14 @@ if button:
         elif channel_ID in ch_IDs:
             st.error("Already Inserted")
         else:  
-                      
+            #Calling the function
             channel_Table(channel_ID)
             video_Table(channel_ID)
             comment_Table(channel_ID)
             st.success("Transformed to MySQL Successfully!!!")
 
 
-#6)Viewing Tables
+#6)Viewing Menu
     
 st.markdown("## :orange[█▓▒▒VIEWING▒▒▓█]")
 st.markdown("### 𝙎𝙚𝙡𝙚𝙘𝙩 𝙖 𝙏𝙖𝙗𝙡𝙚 𝙩𝙤 𝙎𝙝𝙤𝙬:")
@@ -376,7 +376,7 @@ if button2:
         Comment_opt()
 #-------------------------------------------------------------------------
  
-#7)Query Page
+#7)Query Menu
 
 
 st.markdown("## :orange[█▓▒▒FREQUENTLY ASKED QUESTIONS▒▒▓█]")   
