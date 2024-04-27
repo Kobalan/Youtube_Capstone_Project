@@ -323,15 +323,15 @@ def comment_Table(channel_ID):
 #7] Creating functions for Showing table data
 def Channel_opt():
     cursor.execute("""SELECT * FROM channels""")
-    df = pd.DataFrame(cursor.fetchall())
+    df = pd.DataFrame(cursor.fetchall(),columns=cursor.column_names)
     return st.table(df)
 def Video_opt():
     cursor.execute("""SELECT * FROM videos""")
-    df = pd.DataFrame(cursor.fetchall())
+    df = pd.DataFrame(cursor.fetchall(),columns=cursor.column_names)
     return st.table(df)
 def Comment_opt():
     cursor.execute("""SELECT * FROM comments""")
-    df = pd.DataFrame(cursor.fetchall())
+    df = pd.DataFrame(cursor.fetchall(),columns=cursor.column_names)
     return st.table(df) 
      
 #-------------------------------------------------------------------------------
