@@ -19,7 +19,7 @@ st.sidebar.image('Youtube_logo.jpg', width=400)
 
 st.sidebar.markdown(" :blue[🅰🅱🅾🆄🆃 🆃🅷🅸🆂 🅿🆁🅾🅹🅴🅲🆃]")
 st.sidebar.markdown("##  :violet[█▓▒▒░░░PROJECT_TITILE░░░▒▒▓█]")
-st.sidebar.markdown(" 𝒀𝒐𝒖𝒕𝒖𝒃𝒆 𝑯𝒂𝒓𝒗𝒆𝒔𝒕𝒊𝒏𝒈 𝒂𝒏𝒅 𝑾𝒂𝒓𝒆𝒉𝒐𝒖𝒔𝒊𝒏𝒈 𝑼𝒔𝒊𝒏𝒈 𝑺𝑸𝑳 𝒂𝒏𝒅 𝑺𝒕𝒓𝒆𝒂𝒎𝒍𝒊𝒕")
+st.sidebar.markdown(" 𝒀𝒐𝒖𝒕𝒖𝒃𝒆 𝓭𝓪𝓽𝓪 𝑯𝒂𝒓𝒗𝒆𝒔𝒕𝒊𝒏𝒈 𝒂𝒏𝒅 𝑾𝒂𝒓𝒆𝒉𝒐𝒖𝒔𝒊𝒏𝒈 𝑼𝒔𝒊𝒏𝒈 𝑺𝑸𝑳 𝒂𝒏𝒅 𝑺𝒕𝒓𝒆𝒂𝒎𝒍𝒊𝒕")
 st.sidebar.markdown("## :violet[█▓▒▒░░░PROGRAMMING_LANGUAGE░░░▒▒▓█]")
 st.sidebar.markdown("𝒑𝒚𝒕𝒉𝒐𝒏")
 st.sidebar.markdown("## :violet[█▓▒▒░░░LIBRARIES_USED░░░▒▒▓█]")
@@ -49,7 +49,7 @@ cursor=database.cursor()
 
 #API_Connection...
 
-api_key = ''  #Google_API_Key
+api_key = ''  #Google_API_Key  #get this details in Google API Reference
 youtube = build("youtube", "v3", developerKey=api_key)
 #Storing function in variable for reusable    
 
@@ -65,7 +65,7 @@ def get_channelDetails(id):
         part='snippet,statistics,contentDetails'
         )
     
-    response = request.execute()                            #get this details in Google API Reference
+    response = request.execute()                            
     for i in response['items']:
         data=dict(
                 Channel_id=channel_id,
@@ -178,7 +178,7 @@ def  channel_Table(channel_ID):
                         Channel_Description text,
                         Playlist_Id varchar(100)
                         )"""
-    #  # SQL_table created
+    # SQL_table created
     cursor.execute(Channel_details)
     database.commit()
 
@@ -229,7 +229,7 @@ def video_Table(channel_ID):
                         Thumbnail varchar(200),
                         Caption_Status varchar(50)
                         )"""
-    #  # SQL_table created
+    # SQL_table created
     cursor.execute(Video_details)
     database.commit()
 
@@ -288,7 +288,7 @@ def comment_Table(channel_ID):
                     Comment_PublishedAt text
                     
                     )"""
-    #  # SQL_table created
+    # SQL_table created
     cursor.execute(Comment_details)
     database.commit()
   
